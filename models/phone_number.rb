@@ -6,7 +6,7 @@ class PhoneNumber < ActiveRecord::Base
 			  presence: true
 
 	validates :phone_number,
-			  presence: true 
+			  presence: true,
 			  numericality: {only_integer: true}
 
 	belongs_to :addressbook

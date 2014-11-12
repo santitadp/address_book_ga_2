@@ -11,13 +11,13 @@ CREATE TABLE addressbook(
 );
 
 CREATE TABLE phone_number(
-	id INTEGER PRIMARY KEY
+	id INTEGER PRIMARY KEY,
 	category VARCHAR(255),
 	phone_number INTEGER
 );
 
 CREATE TABLE email(
-	id INTEGER PRIMARY KEY
+	id INTEGER PRIMARY KEY,
 	category VARCHAR(255),
 	email VARCHAR(255)
 );
