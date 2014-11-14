@@ -10,6 +10,8 @@ def add_entry
 	puts "Last name: "
 	entry.last_name = gets.chomp
 
+	entry.save
+
 	loop do
 
 	puts "Would you like to enter a phone number? (Y/N)"
@@ -26,6 +28,7 @@ def add_entry
 			phone.category = gets.chomp
 
 			entry.phone_numbers.push(phone)
+			phone.save
 
 		elsif response == "N" or response == "n"
 			break
@@ -34,12 +37,12 @@ def add_entry
 		end
 	end
 
+	loop do
+
 	puts "Would you like to enter an e-mail address? (Y/N)"
 	response = gets.chomp
 
-	loop do
-
-		if response == "Y" or "y"
+		if response == "Y" or response == "y"
 
 			email = Email.new
 
@@ -50,19 +53,12 @@ def add_entry
 			email.category = gets.chomp
 
 			entry.emails.push(email)
+			email.save
 
-			puts "Would you like to enter additional e-mail addresses? (Y/N)"
-			response = gets.chomp
-
-		elsif response == "N" or "n"
+		elsif response == "N" or response == "n"
 			break
 		else
 			puts "Please enter Y/N"
 		end
 	end
-
-	entry.save
-	phone.save
-	email.save
-
 end
