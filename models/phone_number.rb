@@ -9,6 +9,6 @@ class PhoneNumber < ActiveRecord::Base
 			  presence: true,
 			  numericality: {only_integer: true}
 
-	belongs_to :addressbook
+	belongs_to :address_entry
 
 end

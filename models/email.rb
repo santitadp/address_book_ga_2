@@ -8,6 +8,6 @@ class Email < ActiveRecord::Base
 	validates :email,
 	 	 	  presence: true
 
-	belongs_to :addressbook
+	belongs_to :address_entry
 
 end	
