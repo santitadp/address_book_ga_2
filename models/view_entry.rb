@@ -3,24 +3,38 @@ def view_entry
 	puts "Search string:  "
 	view_string = gets.chomp.to_s
 
-	puts "Found #{AddressEntry.where(last_name: view_string).count} match(es)!"
+	entries_found = AddressEntry.where(last_name: view_string)
 
+	puts "Found #{entries_found.count} match(es)!"
 
-	first_name = AddressEntry.first_name
-	last_name  = AddressEntry.last_name
+	entries_found.each do |entry|
+		puts "Here's what I've found:"
 
-		puts """
-		First name: #{first_name}
-		Last name:  #{last_name}"""
+		puts "First name: #{entry.first_name}"
+		puts "Last name:  #{entry.last_name}"
 
-		if PhoneNumber.empty? do
-			puts "No phone numbers  :-("
-			else
-			puts "Phone number: #{PhoneNumber.phone_number}"
+		phone = entry.phone_numbers
+
+		phone.each do |entry|
+			puts "Phone number digits:   #{entry.phone_number}"
+			puts "Phone number category: #{entry.category}"
 		end
-		if Email.empty? do
-			puts "No emails  :-("
-			else
-			puts "Email: #{Email.email}"
+
+		if phone.empty?
+			puts "No phone numbers :-("
 		end
+
+		email = entry.emails
+
+		email.each do |entry|
+			puts "Email address:  #{entry.email}"
+			puts "Email category: #{entry.category}"
+		end
+
+		if email.empty?
+			puts "No emails :-("
+		end
+
+		puts "=============================="
+	end
 end
