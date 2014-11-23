@@ -1,3 +1,4 @@
+### Note: This file appears to be dead code.
 
 def display_menu
 

@@ -1,3 +1,4 @@
+### Note: Dead code?
 
 def display_menu
 
