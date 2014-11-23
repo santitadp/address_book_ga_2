@@ -17,6 +17,11 @@ def add_entry
 	puts "Would you like to enter a phone number? (Y/N)"
 	response = gets.chomp
 
+    ### Pro-tip: Convert the response to lowercase
+    ###          and check against "y":
+    ###
+    ###            if response.downcase == "y"
+    ###
 		if response == "Y" or response == "y"
 
 			phone = PhoneNumber.new

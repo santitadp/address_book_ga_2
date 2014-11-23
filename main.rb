@@ -4,6 +4,7 @@ require_relative 'models'
 
 is_running = true
 
+### Nice and succinct!
 while is_running
 		
 	menu_select = display_menu

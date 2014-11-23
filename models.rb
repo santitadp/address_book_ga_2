@@ -1,3 +1,7 @@
+### Note: Technically, only the ActiveRecord code
+###       should be considered part of the model.
+###       The other files are just libraries
+###       (Which are still important, of course!)
 
 require_relative 'models/address_entry'
 require_relative 'models/email'

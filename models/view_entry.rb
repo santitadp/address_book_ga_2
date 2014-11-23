@@ -3,6 +3,11 @@ def view_entry
 	puts "Search string:  "
 	view_string = gets.chomp.to_s
 
+  ### Enhancement: You can do substring searches
+  ###              using a 'LIKE' query.  Ex:
+  ###
+  ###                AddressEntry.where("last_name LIKE ?", "%#{view_string}%")
+  ###
 	entries_found = AddressEntry.where(last_name: view_string)
 
 	puts "Found #{entries_found.count} match(es)!"
